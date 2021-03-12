@@ -1,2 +1,2 @@
 # Plataforma_controle_Lais
- Elaborara ̧c ̃ao do projeto el ́etrico para controle e monitoramento de uma plataformavertical para cadeirante.
+- Elaboraração do projeto elétrico para controle e monitoramento de uma plataforma vertical para cadeirante.
