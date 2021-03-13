@@ -13,6 +13,7 @@ int Cont = 0; //Contador de uso para manutencao
 int Sm1 = 0; //sensor magnetico reed switch inferior
 int Sm2 = 0; //sensor magnetico reed switch superior
 int Botao = 0; //botao de acionamento subida/descida
+int Porta = 0; //sensor magnetico MC38-A monitoramento da porta
 
 void moveup();
 void movedown();
@@ -28,6 +29,8 @@ void setup() {
   pinMode(10, INPUT); //sensor magnetico reed switch superior
   
   pinMode(11, INPUT); //botao de acionamento subida/descida
+
+  pinMode(12, INPUT); //sensor magnetico MC38-A
 
   pinMode(MR1, OUTPUT);
   pinMode(MR2, OUTPUT);
@@ -48,13 +51,14 @@ void loop() {
             Sm1 = digitalRead(9);
             Sm2 = digitalRead(10);
             Botao = digitalRead(11);
+            Porta = digitalRead(12);
             
-            if (Botao == 1 && Sm1 == 1){
+            if (Botao == 1 && Porta == 1 && Sm1 == 1){
                 moveup();
                 Cont = Cont + 1;
             }
   
-            if (Botao == 1 && Sm2 == 1){
+            if (Botao == 1 && Porta == 1 && Sm2 == 1){
                 movedown();
                 Cont = Cont + 1;
             }
